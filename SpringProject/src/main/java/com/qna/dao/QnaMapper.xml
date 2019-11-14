@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+    
+    <mapper namespace="Qna">
+    	<!-- 1.qna테이블에서 SQL작업(1.글목록보기) -->
+    	<select id="selectList" parameterType="map"  resultType="QnaCommand">
+    		select * from ( select a.*,(@rownum := @rownum+1) rnum
+ 	            from (select * from qna
+ 	            <where>
+ 	                <if test="keyWord!=null and keyField=='title'">
+ 	                    title like concat('%',#{keyWord},'%')
+ 	                </if>
+ 	                <if test="keyWord!=null and keyField=='userID'">
+ 	                    userID like concat('%',#{keyWord},'%')
+ 	                </if>
+ 	                <if test="keyWord!=null and keyField=='content'">
+ 	                    content like concat('%',#{keyWord},'%')
+ 	                </if>
+ 	                <if test="keyWord!=null and keyField=='all'">
+ 	                    title like concat('%',#{keyWord},'%') or
+ 	                    writer like concat('%',#{keyWord},'%') or
+ 	                    content like concat('%',#{keyWord},'%') 
+ 	                </if>
+ 	            </where>
+ 	                     ) a, (select @rownum := 0) r order by num desc) c
+ 	    <![CDATA[
+ 	     where rnum>=#{start} and rnum<=#{end} 
+ 	       ]]>
+    	</select>
+    	
+    	<!-- 2.검색어에 해당하는 총레코드수 구하기(java.lang.Integer->Integer->int -->
+	 	<select id="selectCount" parameterType="map" resultType="Integer">
+	 		select count(*) from qna
+	 		<where>
+				<if test="keyWord!=null and keyField=='title'">
+					title like concat('%',#{keyWord},'%')
+				</if>
+				<if test="keyWord!=null and keyField=='userID'">
+					userID like concat('%',#{keyWord},'%')
+				</if>
+				<if test="keyWord!=null and keyField=='content'">
+					content like concat('%',#{keyWord},'%')
+				</if>
+				<if test="keyWord!=null and keyField=='all'">
+					title like concat('%',#{keyWord},'%') or
+					writer like concat('%',#{keyWord},'%') or
+					content like concat('%',#{keyWord},'%')
+				</if>
+			</where>
+	 	</select>
+	 	
+	 	<!-- 3.최대값구하기 -->
+	 	<select id="getNewSeq" resultType="int">
+	 		select max(num) from qna
+	 	</select>
+	 	
+    </mapper>

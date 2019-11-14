@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "HTTP://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<!-- DTO의 별칭을 부여 -->
+	<typeAliases>
+	    <typeAlias alias="QnaCommand" 
+	                    type="com.qna.domain.QnaCommand"/>
+	</typeAliases>
+	
+	<!-- 접속하고나서의 테이블의 정보 -->
+	<mappers>
+	    <mapper resource="com/qna/dao/QnaMapper.xml"/>
+	</mappers>
+</configuration>
