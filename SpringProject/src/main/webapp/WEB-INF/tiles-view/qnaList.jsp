@@ -29,7 +29,7 @@
 							<option value="content">내용</option>
 							
 						</select> 
-						<input type="text" name="searchtext" title="검색어 입력" id="searchtext" class="form">
+						<input type="text" name="keyWord" title="검색어 입력" id="keyWord" class="form">
                            <input type="submit" value="검색" title="검색" class="btn primary md">
                        </div>
                    </form>
@@ -53,7 +53,7 @@
 									${article.num }
 								</td>
 								<td class="board-list-title">
-									<a href="qnaView.do?num=${article.num}&pageNum=${pgList.currentPage}">
+									<a href="detail.do?num=${article.num}">
 										<div class="board-default-cut-strings">
 											<c:if test="${article.step==1}">
 											<img src="img/sub/icon-reply.png" alt="">
@@ -88,9 +88,9 @@
                    		${pagingHtml }
                    </div>
        			<div class="btn-area tar mt0">
-       				<c:if test="${!empty userID}">
-                   	<a href="writeQna.do" role="button" class="btn deep-blue">글쓰기</a>
-                   	</c:if>
+       				<%-- <c:if test="${!empty userID}"> --%>
+                   	<a href="write.do" role="button" class="btn deep-blue">글쓰기</a>
+                   	<%-- </c:if> --%>
                	</div>
                </div>
 		</div>

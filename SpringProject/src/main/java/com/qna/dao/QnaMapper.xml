@@ -20,7 +20,7 @@
  	                </if>
  	                <if test="keyWord!=null and keyField=='all'">
  	                    title like concat('%',#{keyWord},'%') or
- 	                    writer like concat('%',#{keyWord},'%') or
+ 	                    userID like concat('%',#{keyWord},'%') or
  	                    content like concat('%',#{keyWord},'%') 
  	                </if>
  	            </where>
@@ -45,15 +45,40 @@
 				</if>
 				<if test="keyWord!=null and keyField=='all'">
 					title like concat('%',#{keyWord},'%') or
-					writer like concat('%',#{keyWord},'%') or
+					userID like concat('%',#{keyWord},'%') or
 					content like concat('%',#{keyWord},'%')
 				</if>
 			</where>
 	 	</select>
-	 	
 	 	<!-- 3.최대값구하기 -->
 	 	<select id="getNewSeq" resultType="int">
 	 		select max(num) from qna
 	 	</select>
-	 	
+	 	<!-- 4.게시판 글쓰기  -->
+	 	<insert id="insertQna" parameterType="QnaCommand">
+	 		insert into qna(num,title,content,userID,view,date,reply,step)
+	 		values(#{num},#{title},#{content},#{userID},0,now(),0,0)
+	 	</insert>
+ 	
+	 	<!-- 5.조회수 증가 -->
+	 	<update id="updateHit" parameterType="Integer">
+	 		update qna set view=view+1 where num=#{num}
+	 	</update>
+ 	
+	 	<!-- 6.글 상세보기 -->
+	 	<select id="selectQna" parameterType="Integer" resultType="QnaCommand">
+	 		select * from qna where num=#{num}
+	 	</select>
+ 	<!-- 
+ 	7.글 수정하기
+ 	<update id="updateBoard" parameterType="BoardCommand">
+ 		update qna set userID=#{userID},title=#{title},content=#{content},
+ 		filename=#{filename:VARCHAR} where seq=#{seq}
+ 	</update>
+ 	
+ 	8.글 삭제하기
+ 	<delete id="deleteBoard" parameterType="Integer">
+		delete from springboard2 where seq=#{seq} 	
+ 	</delete> -->
+ 	
     </mapper>
