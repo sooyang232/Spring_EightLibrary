@@ -56,7 +56,7 @@
 									<a href="detail.do?num=${article.num}">
 										<div class="board-default-cut-strings">
 											<c:if test="${article.step==1}">
-											<img src="img/sub/icon-reply.png" alt="">
+											<img src="/webapp/img/sub/icon-reply.png" alt="">
                                            	Re:${article.title}
 											</c:if>
 											<c:if test="${article.step==0 }">							

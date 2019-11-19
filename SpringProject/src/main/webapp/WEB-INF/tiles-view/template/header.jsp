@@ -11,7 +11,9 @@
 		<div class="inner-max">
 			<h1 class="top-logo">
 				<a href="index.jsp">
-					<span class="site-logo">Eight Library</span>
+					<span class="site-logo">Eight Library
+						<img src="/webapp/img/site-logo.png">
+					</span>
 				</a>
 			</h1>
 			<div class="top-gnb">
@@ -19,7 +21,6 @@
 				<b><c:out value="${userID}" /></b>님 환영합니다.
 				<ul class="gnb-list">
 					<li class="logout"><a href="logout.do">로그아웃</a></li>
-					<!-- <li class="login"><a href="login.do">로그아웃</a></li> -->
 				</ul>
 			</c:if>
 			<c:if test="${empty userID}">
