@@ -43,7 +43,8 @@
                    </div>
                </div>
                <div class="btn-area tar">
-                   <!-- <a href="boardRegist.html" role="button" class="btn deep-blue">답글쓰기</a> -->
+                   <a href="update.do?num=${qna.num}" role="button" class="btn blue-gray">글 수정</a>
+                   <a href="delete.do?num=${qna.num}" role="button" class="btn blue-gray">글 삭제</a>
                    <a href="list.do" role="button" class="btn blue-gray">목록보기</a>
                </div>
 		</div>

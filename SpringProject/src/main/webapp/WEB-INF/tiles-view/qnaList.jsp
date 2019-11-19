@@ -19,7 +19,7 @@
                    <br>질문 및 답변(Q&A) 이외에 FAQ, 전화 및 이메일 문의, 주제담당사서 문의를 통해 궁금증을 해결할 수 있습니다.</p>
                </div>
                <div class="board-search-box tar">
-                   <form method="post" action="qna.do" id="searchForm">
+                   <form method="post" action="list.do" id="searchForm">
                        <div class="input-box">
   
                            <select name="keyField" id="keyField" title="검색 선택" class="select">

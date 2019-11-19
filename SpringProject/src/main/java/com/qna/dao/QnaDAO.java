@@ -25,10 +25,10 @@ public interface QnaDAO {
 	//6.게시물에 대한 레코드 한개 찾아서 출력 
 	public QnaCommand selectQna(Integer seq);
 	  
-	  //7.글 수정하기 public void update(BoardCommand board);
+	//7.글 수정하기 
+	public void update(QnaCommand qna);
 	  
-	  //8.글 삭제하기 public void delete(Integer seq);//~(int seq)=>Integer
-	 
+	//8.글 삭제하기 
+	public void delete(Integer seq);//~(int seq)=>Integer
 	
 }
-

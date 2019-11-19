@@ -40,16 +40,20 @@ public class QnaDaoImpl extends SqlSessionDaoSupport implements QnaDAO {
 	}
 	//레코드출력
 	public QnaCommand selectQna(Integer seq) {
-
-	return (QnaCommand)getSqlSession().selectOne("selectQna",seq); 
+		// TODO Auto-generated method stub
+		return (QnaCommand)getSqlSession().selectOne("selectQna",seq); 
 	} 
-	
-	/*
-	 * //글수정하기 public void update(BoardCommand board) { // TODO Auto-generated
-	 * method stub getSqlSession().update("updateBoard",board); }
-	 * 
-	 * //글삭제하기 public void delete(Integer seq) { // TODO Auto-generated method stub
-	 * getSqlSession().delete("deleteBoard",seq); }
-	 */
+	//글수정하기 
+	public void update(QnaCommand qna) { 
+		// TODO Auto-generated method stub
+		getSqlSession().update("updateQna",qna); 
+	}
+	  
+	//글삭제하기 
+	public void delete(Integer seq) { 
+		// TODO Auto-generated method stub
+		getSqlSession().delete("deleteQna",seq); 
+	}
+	 
 	 
 }

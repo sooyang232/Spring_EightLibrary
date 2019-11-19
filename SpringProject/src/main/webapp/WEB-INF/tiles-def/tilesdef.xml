@@ -32,19 +32,19 @@
    	    <put-attribute name="js" value="" />
    	    <put-attribute name="body" value="/WEB-INF/tiles-view/qnaView.jsp" />
    	</definition>
-   	<!-- 
-   	글 수정 페이지
-   	<definition name="boardModify" extends="boardList">
+   	<!-- 글 수정 페이지 -->
+   	<definition name="qnaModify" extends="qnaList">
    	    <put-attribute name="title" value="글수정하기"/>
    	    <put-attribute name="js" value="" />
-   	    <put-attribute name="body" value="/WEB-INF/tiles-view/boardModify.jsp" />
+   	    <put-attribute name="body" value="/WEB-INF/tiles-view/qnaModify.jsp" />
    	</definition>
-   	
-   	글 삭제 페이지
-   	<definition name="boardDelete" extends="boardList">
-   	    <put-attribute name="title" value="글삭제하기"/>
-   	    <put-attribute name="js" value="" />
-   	    <put-attribute name="body" value="/WEB-INF/tiles-view/boardDelete.jsp" />
-   	</definition> -->
+
+	<!-- 글 삭제 페이지 -->
+	<definition name="qnaDelete" extends="qnaList">
+		<put-attribute name="title" value="글삭제하기" />
+		<put-attribute name="js" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/tiles-view/qnaDelete.jsp" />
+	</definition>
    	
 </tiles-definitions>

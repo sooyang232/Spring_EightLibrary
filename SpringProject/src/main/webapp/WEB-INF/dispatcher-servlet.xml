@@ -17,9 +17,8 @@
     <bean class="com.qna.controller.ListController" />
     <bean class="com.qna.controller.WriteController" />
     <bean class="com.qna.controller.DetailController" />
-    <!--
     <bean class="com.qna.controller.UpdateController" />
-	<bean class="com.qna.controller.DeleteController" /> -->
+	<bean class="com.qna.controller.DeleteController" />
     
     <!-- tiles (ViewResolver)설정 -->
     <bean id="tilesConfigurer" 
@@ -51,14 +50,7 @@
     	</property>
     </bean>
     
-    <!-- 예외페이지 작성(문제가 발생->예외페이지를 만들어서 호출이 가능) 
-	    public void setExceptionMappings(Properties mappings) {
-			this.exceptionMappings = mappings;
-		}
-		SimpleMappingExceptionResolver=>웹상에서 에러가 발생->개발자가 작성한 예외처리 페이지를 보여주게
-														설정이 가능한 클래스
-				<prop key="java.lang.Exception">pageError</prop>
-    -->
+    <!-- 예외페이지 작성(문제가 발생->예외페이지를 만들어서 호출이 가능) -->
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
     	<property name="exceptionMappings">
     		<props>

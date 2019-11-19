@@ -69,16 +69,15 @@
 	 	<select id="selectQna" parameterType="Integer" resultType="QnaCommand">
 	 		select * from qna where num=#{num}
 	 	</select>
- 	<!-- 
- 	7.글 수정하기
- 	<update id="updateBoard" parameterType="BoardCommand">
- 		update qna set userID=#{userID},title=#{title},content=#{content},
- 		filename=#{filename:VARCHAR} where seq=#{seq}
- 	</update>
+	 	
+	 	<!-- 7.글 수정하기 -->
+	 	<update id="updateQna" parameterType="QnaCommand">
+	 		update qna set userID=#{userID},title=#{title},content=#{content} where num=#{num}
+	 	</update>
  	
- 	8.글 삭제하기
- 	<delete id="deleteBoard" parameterType="Integer">
-		delete from springboard2 where seq=#{seq} 	
- 	</delete> -->
+	 	<!-- 8.글 삭제하기 -->
+	 	<delete id="deleteQna" parameterType="Integer">
+			delete from qna where num=#{num} 	
+	 	</delete>
  	
     </mapper>
