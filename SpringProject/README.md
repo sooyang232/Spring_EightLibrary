@@ -8,6 +8,11 @@ DB: MariaDB 5.5.60
 Language : Java1.8,JSP2.3,jQuery3.4  
 Framework : Spring3.2
 
+## 실행방법
+  1. 개발환경에 맞는 서버,DB,언어 등을 설치
+  2. 필요한 라이브러리 파일은 Spring_EightLibrary > SpringProject > pom.xml을 통해 업로드
+  3. Spring_EightLibrary > SpringProject > src/main > webapp > index.jsp에서 Run
+  
 ## 구현기능
 + 게시판(Q&A)
     + 글 목록보기
